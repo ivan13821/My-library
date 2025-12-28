@@ -1,11 +1,14 @@
 package com.example.library.library;
+import com.example.library.library.dataTransferObjects.BookId;
+import com.example.library.library.dataTransferObjects.UpdateBook;
 import com.example.library.library.libraryLogic.BookLogic;
-import com.example.library.library.models.Book;
+import com.example.library.library.dataTransferObjects.Book;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Map;
+
+
 
 
 @RestController
@@ -13,6 +16,8 @@ import java.util.Map;
 class LibraryRestController {
 
     BookLogic bookLogic = new BookLogic();
+
+
 
     @GetMapping
     public ResponseEntity<String> getAllBooks() {
@@ -36,18 +41,20 @@ class LibraryRestController {
 
 
     @DeleteMapping("/delete")
-    public ResponseEntity<String> deleteBook(@RequestBody Map<String, String> request) {
-        String name = request.get("name");
-
-        if (name == null || name.isBlank()) {
-            return ResponseEntity.badRequest()
-                    .body("Field 'name' is required in JSON body");
-        }
-
+    public ResponseEntity<String> deleteBook(@RequestBody BookId bookId) {
         HttpHeaders headers = new HttpHeaders();
         return ResponseEntity.ok()
                 .headers(headers)
-                .body(bookLogic.deleteBook(name));
+                .body(bookLogic.deleteBook(bookId.getBookId()));
+    }
+
+
+    @PostMapping("/update")
+    public ResponseEntity<String> updateBook(@RequestBody UpdateBook updateBook) {
+        HttpHeaders headers = new HttpHeaders();
+        return ResponseEntity.ok()
+                .headers(headers)
+                .body(bookLogic.updateBook(updateBook));
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.library.library.libraryLogic;
+import com.example.library.library.dataTransferObjects.UpdateBook;
 import com.example.library.library.database.LibraryDatabase;
-import com.example.library.library.models.Book;
+import com.example.library.library.dataTransferObjects.Book;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,7 @@ public class BookLogic {
 
         for (Book book : books) {
             answer = answer +
+                    "Идентификатор: " + book.getBookId() + "\n" +
                     "Имя: " + book.getName() + "\n" +
                     "Автор: " + book.getAuthor() + "\n" +
                     "Описание: " + book.getDescription() + "\n" +
@@ -46,6 +48,16 @@ public class BookLogic {
         else {
             return "Такой книги не существует";
         }
+    }
+
+
+    public String updateBook(UpdateBook updateBook) {
+
+        if (database.getBookById(updateBook.getBookId()) == null ) {
+            return "Такой книги не существует";
+        }
+
+        return database.updateBook(updateBook);
     }
 
 
