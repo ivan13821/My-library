@@ -1,4 +1,4 @@
-package com.example.library.library.dataTransferObjects;
+package com.example.library.library.dataTransferObjects.request;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Book {
+public class BookRequest {
 
     private long bookId;
 
@@ -22,7 +22,7 @@ public class Book {
     @NotBlank(message = "Cost is required")
     private Double cost;
 
-    public Book(String author, String name, String description, Double cost) {
+    public BookRequest(String author, String name, String description, Double cost) {
         this.author = author;
         this.cost = cost;
         this.name = name;

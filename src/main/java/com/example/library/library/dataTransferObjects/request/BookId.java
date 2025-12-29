@@ -1,4 +1,4 @@
-package com.example.library.library.dataTransferObjects;
+package com.example.library.library.dataTransferObjects.request;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 
