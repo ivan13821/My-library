@@ -1,0 +1,15 @@
+com/example/library/user/service/UserService.class
+com/example/library/library/dataTransferObjects/request/UpdateBook.class
+com/example/library/user/security/SecurityConfig.class
+com/example/library/library/database/BookEntity.class
+com/example/library/user/database/UserRepository.class
+com/example/library/user/database/UserRole.class
+com/example/library/library/service/BookService.class
+com/example/library/library/dataTransferObjects/request/BookId.class
+com/example/library/library/dataTransferObjects/request/BookRequest.class
+com/example/library/LibraryApplication.class
+com/example/library/library/LibraryRestController.class
+com/example/library/user/database/UserEntity.class
+com/example/library/library/dataTransferObjects/response/BookResponse.class
+com/example/library/library/database/BookRepository.class
+com/example/library/library/mappers/BookMapper.class

@@ -1,0 +1,15 @@
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/LibraryApplication.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/library/LibraryRestController.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/library/dataTransferObjects/request/BookId.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/library/dataTransferObjects/request/BookRequest.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/library/dataTransferObjects/request/UpdateBook.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/library/dataTransferObjects/response/BookResponse.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/library/database/BookEntity.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/library/database/BookRepository.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/library/mappers/BookMapper.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/library/service/BookService.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/user/database/UserEntity.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/user/database/UserRepository.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/user/database/UserRole.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/user/security/SecurityConfig.java
+/home/ivashka/Загрузки/library/src/main/java/com/example/library/user/service/UserService.java
