@@ -1,8 +1,9 @@
 package com.example.library.user.mapping;
 
+import com.example.library.user.dataTransferObjects.request.RegistrationRequest;
+import com.example.library.user.dataTransferObjects.response.UserResponse;
 import com.example.library.user.database.UserEntity;
-import com.example.library.library.dataTransferObjects.request.BookRequest;
-import com.example.library.library.dataTransferObjects.response.BookResponse;
+import com.example.library.user.database.UserRepository;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,39 +11,24 @@ public class UserMapper {
 
 
 
-    public BookResponse toResponse(BookEntity entity) {
-        if (entity == null) return null;
+    public static UserEntity toUserEntity(RegistrationRequest request) {
+        UserEntity user = new UserEntity();
 
-        return new BookResponse(
-                entity.getId(),
-                entity.getAuthor(),
-                entity.getBookName(),
-                entity.getDescription(),
-                entity.getCost()
-        );
+        user.setEmail(request.getEmail());
+        user.setLogin(request.getLogin());
+        user.setUsername(request.getUsername());
+        user.setPassword(request.getPassword());
+
+        return user;
     }
 
+    public static UserResponse toUserResponse(UserEntity user) {
+        UserResponse response = new UserResponse();
 
+        response.setEmail(user.getEmail());
+        response.setUsername(user.getUsername());
+        response.setLogin(user.getLogin());
 
-    public BookEntity toEntity(BookRequest request) {
-        if (request == null) return null;
-
-        return new BookEntity(
-                request.getName(),
-                request.getAuthor(),
-                request.getDescription(),
-                request.getCost()
-        );
-    }
-
-
-
-    public void updateEntity(BookRequest request, BookEntity entity) {
-        if (request == null || entity == null) return;
-
-        entity.setBookName(request.getName());
-        entity.setAuthor(request.getAuthor());
-        entity.setDescription(request.getDescription());
-        entity.setCost(request.getCost());
+        return response;
     }
 }
